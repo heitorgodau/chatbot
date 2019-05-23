@@ -8,13 +8,12 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-body {
-    background-image: url(../images/chatbg7.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+html {
+    background-image: url(../images/dra-rebeca.png); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
 }
 
 .container {}
