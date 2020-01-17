@@ -7,5 +7,5 @@ applications:
   # host: chatbot-${random-word}
   routes:
     - rout: mybluemix.net
-    - rout: chatbot-${random-word}
+    - rout: chatbot-doctorhelper
   disk_quota: 1024M
