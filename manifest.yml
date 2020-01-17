@@ -2,7 +2,10 @@ applications:
 - path: .
   memory: 512M
   instances: 1
-  domain: mybluemix.net
   name: chatbot
-  host: chatbot-${random-word}
+  # domain: mybluemix.net
+  # host: chatbot-${random-word}
+  routes:
+    - rout: mybluemix.net
+    - rout: chatbot-${random-word}
   disk_quota: 1024M

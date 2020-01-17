@@ -2,43 +2,40 @@
  * Module dependencies.
  */
 
-var express = require('express'),
-    routes = require('./routes'),
-    http = require('http'),
-    path = require('path'),
-    fs = require('fs');
-var cfenv = require('cfenv');
+const express = require('express');
+const routes = require('./routes');
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
+const cfenv = require('cfenv');
+const chatbot = require('./config/bot.js');
+const methodOverride = require('method-override');
+const errorHandler = require('errorhandler');
 
-var chatbot = require('./config/bot.js');
 
+const app = express();
 
-var app = express();
+const fileToUpload;
 
-var fileToUpload;
-
-var dbCredentials = {
+const dbCredentials = {
     dbName: 'my_sample_db'
 };
-
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var errorHandler = require('errorhandler');
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
-app.use(bodyParser.urlencoded({
+app.use(express.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/style', express.static(path.join(__dirname, '/views/style')));
 
 // development only
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
     app.use(errorHandler());
 }
 

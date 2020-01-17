@@ -9,7 +9,6 @@
         "express": "4.13.x",
         "ejs": "2.4.x",
         "cloudant": "1.4.x",
-        "body-parser": "1.14.x",
         "method-override": "2.3.x",
         "morgan": "1.6.x",
         "errorhandler": "1.4.x",
